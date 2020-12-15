@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="549.0" prefWidth="270.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="GUI.MenuController">
+    <effect>
+        <Glow/>
+    </effect>
+    <children>
+        <GridPane prefHeight="588.0" prefWidth="270.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="83.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="90.0" minHeight="10.0" prefHeight="68.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="51.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="88.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="55.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="60.0" minHeight="3.0" prefHeight="44.0" vgrow="SOMETIMES"/>
+                <RowConstraints maxHeight="69.0" minHeight="10.0" prefHeight="54.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+            <children>
+                <Button alignment="CENTER" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="30.0"
+                        prefWidth="150.0" text="Start" textAlignment="CENTER" translateX="10.0" GridPane.rowIndex="12">
+                    <GridPane.margin>
+                        <Insets bottom="10.0" left="65.0" right="80.0" top="10.0"/>
+                    </GridPane.margin>
+                    <font>
+                        <Font name="Eras Bold ITC" size="18.0"/>
+                    </font>
+                </Button>
+                <Label prefHeight="42.0" prefWidth="253.0" text="Game of Evolution" textAlignment="CENTER">
+                    <font>
+                        <Font name="Eras Bold ITC" size="25.0"/>
+                    </font>
+                    <GridPane.margin>
+                        <Insets left="17.0" right="15.0"/>
+                    </GridPane.margin>
+                </Label>
+                <RadioButton fx:id="world2" mnemonicParsing="false" text="2" textAlignment="CENTER"
+                             textOverrun="WORD_ELLIPSIS" GridPane.rowIndex="11">
+                    <GridPane.margin>
+                        <Insets left="200.0"/>
+                    </GridPane.margin>
+                    <font>
+                        <Font name="Eras Medium ITC" size="12.0"/>
+                    </font>
+                    <toggleGroup>
+                        <ToggleGroup fx:id="group1"/>
+                    </toggleGroup>
+                </RadioButton>
+                <RadioButton fx:id="world1" mnemonicParsing="false" prefHeight="17.0" prefWidth="41.0" text="1"
+                             toggleGroup="$group1" GridPane.rowIndex="11">
+                    <GridPane.margin>
+                        <Insets left="130.0"/>
+                    </GridPane.margin>
+                    <font>
+                        <Font name="Eras Medium ITC" size="12.0"/>
+                    </font>
+                </RadioButton>
+                <TextField fx:id="heightInput" GridPane.rowIndex="5">
+                    <GridPane.margin>
+                        <Insets left="145.0" right="30.0"/>
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="jungleRatioInput" GridPane.rowIndex="6">
+                    <GridPane.margin>
+                        <Insets left="145.0" right="30.0"/>
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="widthInput" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="60.0"
+                           GridPane.rowIndex="4">
+                    <GridPane.margin>
+                        <Insets left="145.0" right="30.0"/>
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="initialEnergyInput" GridPane.rowIndex="7">
+                    <GridPane.margin>
+                        <Insets left="145.0" right="30.0"/>
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="grassEnergyInput" GridPane.rowIndex="8">
+                    <GridPane.margin>
+                        <Insets left="145.0" right="30.0"/>
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="moveEnergyInput" prefHeight="25.0" prefWidth="181.0" GridPane.rowIndex="9">
+                    <GridPane.margin>
+                        <Insets left="145.0" right="30.0"/>
+                    </GridPane.margin>
+                </TextField>
+                <TextField fx:id="animalsInput" prefHeight="25.0" prefWidth="146.0" GridPane.rowIndex="10">
+                    <GridPane.margin>
+                        <Insets left="145.0" right="30.0"/>
+                    </GridPane.margin>
+                </TextField>
+                <Label prefHeight="17.0" prefWidth="66.0" text="Worlds: " textAlignment="CENTER" GridPane.rowIndex="11">
+                    <GridPane.margin>
+                        <Insets left="30.0"/>
+                    </GridPane.margin>
+                    <font>
+                        <Font name="Eras Medium ITC" size="12.0"/>
+                    </font>
+                </Label>
+                <Label prefHeight="17.0" prefWidth="237.0" text="      Click start and watch the world evolves!"
+                       textAlignment="CENTER" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets bottom="1.0" left="10.0" right="10.0" top="35.0"/>
+                    </GridPane.margin>
+                    <font>
+                        <Font name="Eras Medium ITC" size="12.0"/>
+                    </font>
+                </Label>
+                <Label prefHeight="54.0" prefWidth="246.0"
+                       text="Please set initial parameters or init with parameters from file. " textAlignment="CENTER"
+                       wrapText="true" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets bottom="20.0" left="10.0" right="10.0" top="2.0"/>
+                    </GridPane.margin>
+                    <font>
+                        <Font name="Eras Medium ITC" size="12.0"/>
+                    </font>
+                </Label>
+                <Label text="Width:" GridPane.rowIndex="4">
+                    <GridPane.margin>
+                        <Insets left="30.0"/>
+                    </GridPane.margin>
+                    <font>
+                        <Font name="Eras Medium ITC" size="12.0"/>
+                    </font>
+                </Label>
+                <Label text="Height:" GridPane.rowIndex="5">
+                    <GridPane.margin>
+                        <Insets left="30.0"/>
+                    </GridPane.margin>
+                    <font>
+                        <Font name="Eras Medium ITC" size="12.0"/>
+                    </font>
+                </Label>
+                <Label text="Jungle ratio:" GridPane.rowIndex="6">
+                    <GridPane.margin>
+                        <Insets left="30.0"/>
+                    </GridPane.margin>
+                    <font>
+                        <Font name="Eras Medium ITC" size="12.0"/>
+                    </font>
+                </Label>
+                <Label prefHeight="17.0" prefWidth="88.0" text="Initial energy:" GridPane.rowIndex="7">
+                    <GridPane.margin>
+                        <Insets left="30.0"/>
+                    </GridPane.margin>
+                    <font>
+                        <Font name="Eras Medium ITC" size="12.0"/>
+                    </font>
+                </Label>
+                <Label text="Grass energy:" GridPane.rowIndex="8">
+                    <GridPane.margin>
+                        <Insets left="30.0"/>
+                    </GridPane.margin>
+                    <font>
+                        <Font name="Eras Medium ITC" size="12.0"/>
+                    </font>
+                </Label>
+                <Label id="moveEnergy" prefHeight="17.0" prefWidth="79.0" text="Move energy:" GridPane.rowIndex="9">
+                    <GridPane.margin>
+                        <Insets left="30.0"/>
+                    </GridPane.margin>
+                    <font>
+                        <Font name="Eras Medium ITC" size="12.0"/>
+                    </font>
+                </Label>
+                <Label id="animalsNum" text="Number of Animals:" GridPane.rowIndex="10">
+                    <GridPane.margin>
+                        <Insets left="30.0"/>
+                    </GridPane.margin>
+                    <font>
+                        <Font name="Eras Medium ITC" size="12.0"/>
+                    </font>
+                </Label>
+                <CheckBox fx:id="fromFile" mnemonicParsing="false" prefHeight="17.0" prefWidth="176.0"
+                          text="Get parameters from file" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets left="30.0"/>
+                    </GridPane.margin>
+                    <font>
+                        <Font name="Eras Medium ITC" size="12.0"/>
+                    </font>
+                </CheckBox>
+                <Label fx:id="message" prefHeight="17.0" prefWidth="212.0" text=" " textAlignment="CENTER"
+                       GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets left="50.0" right="30.0"/>
+                    </GridPane.margin>
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+            </children>
+        </GridPane>
+    </children>
+</VBox>

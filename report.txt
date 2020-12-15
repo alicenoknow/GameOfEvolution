@@ -1,0 +1,11 @@
+REPORT
+Day 185
+
+Current grass number: 2 
+Current animal number: 620
+Dominant genotype(gen:count):
+0:5  1:4  2:5  3:2  4:1  5:2  6:7  7:6  
+Average children number: 0.83
+Average energy number: 16.56
+Average lifespan: 62.40
+Death counter:  0
