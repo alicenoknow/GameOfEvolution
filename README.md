@@ -1,7 +1,7 @@
 # Game Of Evolution
 ![alt text](https://github.com/alicenoknow/GameOfEvolution/blob/master/SimulatorScreenShot.png?raw=true)
 ## Description 
-#### Simulator of a world consisting of steppe with a jungle in the center, grass and a number of running animals.<br>Animals are extraordinary creatures who have its own genotype, which determines the most likely direction they will move. 
+#### Simulator of a world consisting of a steppe with a jungle in the center, grasses and a number of running animals.<br>Animals are extraordinary creatures who have its own genotype, which determines the most likely direction they will move. 
 ### Everyday in this world follows the same pattern:
 - animals get older and lose some energy
 - animals without energy die
