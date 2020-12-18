@@ -50,22 +50,29 @@ public class SimulationEngine implements IEngine {
 
     // Window for animation and statistics
     private void initStage() {
+        Stage stage = new Stage();
+        String worldPath = "world.fxml";
+        String iconPath = "icon.png";
         try {
-            URL filePath = this.getClass().getResource("world.fxml");
+            URL filePath = this.getClass().getResource(worldPath);
             FXMLLoader fxmlLoader = new FXMLLoader(filePath);
             Parent root = fxmlLoader.load();
-            Stage stage = new Stage();
             stage.setTitle("World");
             stage.setScene(new Scene(root, 760, 610));
             stage.setResizable(false);
-            stage.getIcons().add(new Image("icon.png"));
-            stage.show();
 
             this.controller = fxmlLoader.getController();
             controller.setSimulation(this, map, stage);
         } catch (IOException | NullPointerException | IllegalStateException e) {
-            System.out.println(e.getMessage() + "Files necessary to run do not exist!");
+            System.out.println(e.getMessage() + " Files necessary to run do not exist! " + worldPath);
             System.exit(0);
+        }
+        try{
+            stage.getIcons().add(new Image(iconPath));
+            stage.show();
+        }
+        catch(IllegalArgumentException | NullPointerException e){
+            System.out.println(e.getMessage() + " Icon image not found! " + iconPath);
         }
     }
 

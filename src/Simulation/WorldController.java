@@ -77,15 +77,16 @@ public class WorldController {
                         simulation.update();
                         displayStatistics();
                         // Just to look pretty when there is no animation
+                        String imageName = "icon.png";
                         try {
-                            Image image = new Image("icon.png");
+                            Image image = new Image(imageName);
                             ImageView imageView = new ImageView(image);
                             imageView.setFitHeight(500);
                             imageView.setFitWidth(500);
                             mapAnimation.getChildren().add(imageView);
                         }
-                        catch(NullPointerException e){
-                            System.out.println(e.getMessage());
+                        catch(IllegalArgumentException | NullPointerException e){
+                            System.out.println(e.getMessage() + " Image not found! " + imageName);
                         }
                     }));
         stage.setOnCloseRequest(event -> timeline.stop());
