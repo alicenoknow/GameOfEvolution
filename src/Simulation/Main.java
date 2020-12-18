@@ -1,4 +1,4 @@
-package GUI;
+package Simulation;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class Main extends Application {
 
@@ -21,7 +22,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
 
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("menu.fxml"));
+            URL filePath = this.getClass().getResource("menu.fxml");
+            FXMLLoader fxmlLoader = new FXMLLoader(filePath);
             Parent root = fxmlLoader.load();
 
             primaryStage.setTitle("Menu");
@@ -29,7 +31,7 @@ public class Main extends Application {
             primaryStage.setResizable(false);
             primaryStage.getIcons().add(new Image("icon.png"));
             primaryStage.show();
-        } catch (IOException | NullPointerException e) {
+        } catch (IOException | NullPointerException | IllegalStateException e) {
             System.out.println(e.getMessage() + " Files necessary to run do not exist!");
             System.exit(0);
         }

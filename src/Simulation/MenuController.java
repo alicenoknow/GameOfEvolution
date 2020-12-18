@@ -1,6 +1,5 @@
-package GUI;
+package Simulation;
 
-import Engine.SimulationEngine;
 import Map.WorldMap;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;

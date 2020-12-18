@@ -1,4 +1,4 @@
-package Engine;
+package Simulation;
 
 /**
  * The interface responsible for managing the moves of the animals.

@@ -19,7 +19,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0"
       prefWidth="760.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="GUI.WorldController">
+      fx:controller="Simulation.WorldController">
     <children>
         <SplitPane dividerPositions="0.5" focusTraversable="true" prefHeight="600.0" prefWidth="760.0"
                    VBox.vgrow="ALWAYS">

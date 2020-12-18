@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 
 <VBox prefHeight="549.0" prefWidth="270.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="GUI.MenuController">
+      fx:controller="Simulation.MenuController">
     <effect>
         <Glow/>
     </effect>

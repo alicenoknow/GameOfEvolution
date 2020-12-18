@@ -1,10 +1,9 @@
-package GUI;
+package Simulation;
 
 import Elements.Animal;
 import Elements.Grass;
 import Elements.Herd;
 import Elements.Vector2d;
-import Engine.SimulationEngine;
 import Map.WorldMap;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -65,7 +64,7 @@ public class WorldController {
         // so if given map is bigger, display only statistics
         if (Math.max(Config.getWidth(), Config.getHeight()) < 900) {
             timeline.getKeyFrames().add(new KeyFrame(Duration.millis(200),
-                    actionEvent -> {
+                    actionEvent -> {                    // this will happen when timeline is running
                         simulation.update();
                         drawMap();
                         displayStatistics();
@@ -73,7 +72,7 @@ public class WorldController {
             // Initial
             drawMap();
         } else
-            timeline.getKeyFrames().add(new KeyFrame(Duration.millis(800),
+            timeline.getKeyFrames().add(new KeyFrame(Duration.millis(850),
                     actionEvent -> {
                         simulation.update();
                         displayStatistics();

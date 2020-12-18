@@ -1,10 +1,8 @@
-package Engine;
+package Simulation;
 
 import Elements.Animal;
 import Elements.Genotype;
 import Elements.Herd;
-import GUI.Main;
-import GUI.WorldController;
 import Map.WorldMap;
 import Statistics.ComplexStatistics;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +13,7 @@ import javafx.stage.Stage;
 import Utils.Config;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -52,7 +51,8 @@ public class SimulationEngine implements IEngine {
     // Window for animation and statistics
     private void initStage() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("world.fxml"));
+            URL filePath = this.getClass().getResource("world.fxml");
+            FXMLLoader fxmlLoader = new FXMLLoader(filePath);
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.setTitle("World");
@@ -63,7 +63,7 @@ public class SimulationEngine implements IEngine {
 
             this.controller = fxmlLoader.getController();
             controller.setSimulation(this, map, stage);
-        } catch (IOException | NullPointerException e) {
+        } catch (IOException | NullPointerException | IllegalStateException e) {
             System.out.println(e.getMessage() + "Files necessary to run do not exist!");
             System.exit(0);
         }
