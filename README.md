@@ -25,6 +25,6 @@
 ## Technologies
 #### Java 14.0.2 + JavaFX 15.0.1
 ## Usage
-#### To start run Main class from GUI module
+#### To start run Main class from Simulation module
 ## Author:
 #### Alicja Niewiadomska
