@@ -78,10 +78,8 @@ public class ComplexStatistics extends Statistics {
 
     // Save general statistics to "report.txt"
     public void saveStats() {
-        try {
-            FileWriter writer = new FileWriter("report.txt");
+        try(FileWriter writer = new FileWriter("report.txt");) {
             writer.write("REPORT\n" + this.getStatisticsString(this.generalStats));
-            writer.close();
 
         } catch (IOException e) {
             e.printStackTrace();
