@@ -1,22 +1,17 @@
 package Simulation;
 
 import Map.WorldMap;
+import Utils.Config;
+import Utils.InputParser;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
-import Utils.Config;
-import Utils.InputParser;
 
-
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class MenuController {
-    private final Logger log = Logger.getLogger(this.getClass().getName());
     @FXML
     private CheckBox fromFile;
     @FXML
@@ -48,28 +43,23 @@ public class MenuController {
         InputParser parser = new InputParser();
         Config newConfig;
 
-        try {
-            if (fromFile.isSelected()) {
-                newConfig = parser.getConfigFromJSON();
-            } else {
+        if (fromFile.isSelected()) {
+            newConfig = parser.getConfigFromJSON();
+        } else {
 
-                ArrayList<String> params = new ArrayList<>();
-                params.add(widthInput.getText());
-                params.add(heightInput.getText());
-                params.add(jungleRatioInput.getText());
-                params.add(initialEnergyInput.getText());
-                params.add(moveEnergyInput.getText());
-                params.add(grassEnergyInput.getText());
-                params.add(animalsInput.getText());
+            ArrayList<String> params = new ArrayList<>();
+            params.add(widthInput.getText());
+            params.add(heightInput.getText());
+            params.add(jungleRatioInput.getText());
+            params.add(initialEnergyInput.getText());
+            params.add(moveEnergyInput.getText());
+            params.add(grassEnergyInput.getText());
+            params.add(animalsInput.getText());
 
-                newConfig = parser.getConfigFromInput(params);
-            }
-            if (newConfig == null) {
-                message.setText(" Wrong input! ");
-                return;
-            }
-        } catch (IOException e) {
-            log.log(Level.WARNING, e.getMessage());
+            newConfig = parser.getConfigFromInput(params);
+        }
+        if (newConfig == null) {
+            message.setText(" Wrong input! ");
             return;
         }
 

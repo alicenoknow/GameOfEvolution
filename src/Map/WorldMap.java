@@ -35,7 +35,6 @@ public class WorldMap extends BasicMap implements IWorldMap, IPositionChangeObse
         }
         addAnimalToMap(animalPosition, animal);
         animal.addObserver(this);
-        return true;
     }
 
     @Override
