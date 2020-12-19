@@ -26,7 +26,7 @@ public class WorldMap extends BasicMap implements IWorldMap, IPositionChangeObse
 
     // Place animal on the map, start observing
     @Override
-    public boolean place(Animal animal) {
+    public void place(Animal animal) {
         Vector2d animalPosition = animal.getPosition();
         if (!isOccupied(animalPosition)) {
             fieldsTaken += 1;

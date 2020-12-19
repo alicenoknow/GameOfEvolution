@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 public class InputParser {
     private final Logger log = Logger.getLogger(this.getClass().getName());
 
-    public Config getConfigFromJSON() throws IOException {
+    public Config getConfigFromJSON(){
         Config config = new Config();
         if (verifyParameters())
             return config;

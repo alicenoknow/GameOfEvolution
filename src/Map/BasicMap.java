@@ -3,8 +3,8 @@ package Map;
 import Elements.Vector2d;
 
 public class BasicMap {
-    protected Vector2d startPoint;
-    protected Vector2d endPoint;
+    protected final Vector2d startPoint;
+    protected final Vector2d endPoint;
     protected final int mapCapacity;
     protected int fieldsTaken;
 

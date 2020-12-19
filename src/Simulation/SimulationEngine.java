@@ -5,21 +5,12 @@ import Elements.Genotype;
 import Elements.Herd;
 import Map.WorldMap;
 import Statistics.ComplexStatistics;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.stage.Stage;
 import Utils.Config;
 
-import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class SimulationEngine implements IEngine {
     private final WorldMap map;
@@ -43,8 +34,8 @@ public class SimulationEngine implements IEngine {
         for (int i = 0; i < Config.getNumberOfAnimals(); i++) {
             Animal animal = new Animal(map);
             this.statsCurrent.updateAfterBirth(null, null, animal);
-            if (map.place(animal))
-                this.animals.add(animal);
+            map.place(animal);
+            this.animals.add(animal);
         }
         this.statsCurrent.updateStatistics(animals);
     }
