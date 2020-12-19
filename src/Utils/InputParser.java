@@ -3,8 +3,11 @@ package Utils;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class InputParser {
+    private final Logger log = Logger.getLogger(this.getClass().getName());
 
     public Config getConfigFromJSON() throws IOException {
         Config config = new Config();
@@ -32,6 +35,7 @@ public class InputParser {
             verifyPositiveNonZero(Config.getNumberOfAnimals());
             verifySpace(Config.getWidth(), Config.getHeight(), Config.getNumberOfAnimals());
         } catch (IllegalArgumentException e) {
+            log.log(Level.WARNING, e.getMessage());
             return false;
         }
         return true;

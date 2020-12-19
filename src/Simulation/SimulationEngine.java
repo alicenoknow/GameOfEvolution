@@ -18,9 +18,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class SimulationEngine implements IEngine {
-
+    private final Logger log = Logger.getLogger(this.getClass().getName());
     private final WorldMap map;
     private final ArrayList<Animal> animals;
     private final ComplexStatistics statsCurrent;
@@ -60,19 +62,19 @@ public class SimulationEngine implements IEngine {
             stage.setTitle("World");
             stage.setScene(new Scene(root, 760, 610));
             stage.setResizable(false);
+            stage.show();
 
             this.controller = fxmlLoader.getController();
             controller.setSimulation(this, map, stage);
         } catch (IOException | NullPointerException | IllegalStateException e) {
-            System.out.println(e.getMessage() + " Files necessary to run do not exist! " + worldPath);
+            log.log(Level.SEVERE, e.getMessage() + " Files necessary to run do not exists! " + worldPath);
             System.exit(0);
         }
         try{
             stage.getIcons().add(new Image(iconPath));
-            stage.show();
         }
         catch(IllegalArgumentException | NullPointerException e){
-            System.out.println(e.getMessage() + " Icon image not found! " + iconPath);
+            log.log(Level.WARNING, e.getMessage() + " Icon image not found! " + iconPath);
         }
     }
 

@@ -8,9 +8,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class Config {
+    private final Logger log = Logger.getLogger(this.getClass().getName());
 
     private static int width;
     private static int height;
@@ -34,8 +37,8 @@ public class Config {
             plantEnergy = Integer.parseInt(params.get(5));
             numberOfAnimals = Integer.parseInt(params.get(6));
             calculateJungle();
-        } catch (NumberFormatException ex) {
-            System.out.println(ex.getMessage());
+        } catch (NumberFormatException e) {
+            log.log(Level.WARNING, e.getMessage());
         }
     }
 
@@ -51,11 +54,8 @@ public class Config {
             numberOfAnimals = ((Long) jsonObject.get("numberOfAnimals")).intValue();
             calculateJungle();
 
-        } catch (IOException | NullPointerException | IllegalArgumentException | ParseException ex) {
-            if (ex instanceof FileNotFoundException) System.out.println(ex.getMessage());
-            if (ex instanceof ParseException) System.out.println(ex.getMessage());
-            if (ex instanceof IllegalArgumentException) System.out.println(ex.getMessage());
-            if (ex instanceof IOException) System.out.println(ex.getMessage());
+        } catch (IOException | NullPointerException | IllegalArgumentException | ParseException e) {
+            log.log(Level.WARNING, e.getMessage());
         }
 
     }

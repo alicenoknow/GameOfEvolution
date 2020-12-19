@@ -12,9 +12,11 @@ import Utils.InputParser;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class MenuController {
-
+    private final Logger log = Logger.getLogger(this.getClass().getName());
     @FXML
     private CheckBox fromFile;
     @FXML
@@ -67,7 +69,7 @@ public class MenuController {
                 return;
             }
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            log.log(Level.WARNING, e.getMessage());
             return;
         }
 

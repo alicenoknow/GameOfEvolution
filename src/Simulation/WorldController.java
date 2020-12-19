@@ -27,9 +27,12 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 import Utils.Config;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class WorldController {
+    private final Logger log = Logger.getLogger(this.getClass().getName());
     private Timeline timeline;
     private SimulationEngine simulation;
     private WorldMap map;
@@ -86,7 +89,7 @@ public class WorldController {
                             mapAnimation.getChildren().add(imageView);
                         }
                         catch(IllegalArgumentException | NullPointerException e){
-                            System.out.println(e.getMessage() + " Image not found! " + imageName);
+                            log.log(Level.WARNING, e.getMessage() + " Image not found! " + imageName);
                         }
                     }));
         stage.setOnCloseRequest(event -> timeline.stop());
@@ -131,7 +134,7 @@ public class WorldController {
             }
             return -1;
         }catch (NumberFormatException e){
-            System.out.println(e.getMessage());
+            log.log(Level.WARNING, e.getMessage());
             return -1;
         }
 

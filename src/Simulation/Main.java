@@ -9,8 +9,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Main extends Application {
+    private final Logger log = Logger.getLogger(this.getClass().getName());
 
     public static void main(String[] args) {
         launch(args);
@@ -32,14 +35,14 @@ public class Main extends Application {
             primaryStage.setResizable(false);
             primaryStage.show();
         } catch (IOException | NullPointerException | IllegalStateException e) {
-            System.out.println(e.getMessage() + " Files necessary to run do not exist! " + menuPath);
+            log.log(Level.SEVERE, e.getMessage() + " Files necessary to run do not exist! " + menuPath);
             System.exit(0);
         }
         try{
             primaryStage.getIcons().add(new Image(iconPath));
         }
         catch (NullPointerException | IllegalStateException e){
-            System.out.println(e.getMessage() + " Icon image not found! " + iconPath);
+           log.log(Level.WARNING, e.getMessage() + " Icon image not found! " + iconPath);
         }
     }
 }

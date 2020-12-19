@@ -8,8 +8,11 @@ import Utils.Tracker;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ComplexStatistics extends Statistics {
+    private final Logger log = Logger.getLogger(this.getClass().getName());
     private final Statistics generalStats;
     private Tracker tracker;
 
@@ -82,7 +85,7 @@ public class ComplexStatistics extends Statistics {
             writer.write("REPORT\n" + this.getStatisticsString(this.generalStats));
 
         } catch (IOException e) {
-            e.printStackTrace();
+            log.log(Level.WARNING, e.getMessage());
         }
     }
 
