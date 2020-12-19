@@ -22,7 +22,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class SimulationEngine implements IEngine {
-    private final Logger log = Logger.getLogger(this.getClass().getName());
     private final WorldMap map;
     private final ArrayList<Animal> animals;
     private final ComplexStatistics statsCurrent;
@@ -52,30 +51,14 @@ public class SimulationEngine implements IEngine {
 
     // Window for animation and statistics
     private void initStage() {
-        Stage stage = new Stage();
         String worldPath = "world.fxml";
         String iconPath = "icon.png";
-        try {
-            URL filePath = this.getClass().getResource(worldPath);
-            FXMLLoader fxmlLoader = new FXMLLoader(filePath);
-            Parent root = fxmlLoader.load();
-            stage.setTitle("World");
-            stage.setScene(new Scene(root, 760, 610));
-            stage.setResizable(false);
-            stage.show();
-
-            this.controller = fxmlLoader.getController();
-            controller.setSimulation(this, map, stage);
-        } catch (IOException | NullPointerException | IllegalStateException e) {
-            log.log(Level.SEVERE, e.getMessage() + " Files necessary to run do not exists! " + worldPath);
-            System.exit(0);
-        }
-        try{
-            stage.getIcons().add(new Image(iconPath));
-        }
-        catch(IllegalArgumentException | NullPointerException e){
-            log.log(Level.WARNING, e.getMessage() + " Icon image not found! " + iconPath);
-        }
+        StageInitializer stageInit = new StageInitializer();
+        stageInit.loadFXML(worldPath);
+        stageInit.setStageView("World", 610, 760);
+        stageInit.setIcon(iconPath);
+        this.controller = (WorldController) stageInit.getController();
+        controller.setSimulation(this, map, stageInit.getStage());
     }
 
     // Check if saving or tracking operations should be performed on this day, then run simulation
