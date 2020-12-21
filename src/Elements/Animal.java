@@ -118,7 +118,7 @@ public class Animal extends AbstractWorldMapElement {
         return Color.rgb(energyRatio, energyRatio, energyRatio);
     }
 
-    // Get color if "show dominant genotype is selected"
+    // Get color if "show dominant genotype is selected", then first check if animal has dominant genotype
     public Color getColor(Genotype dominant) {
         if(this.genotype == dominant)
             return Color.rgb(250, 255, 31);
