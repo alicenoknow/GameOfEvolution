@@ -1,4 +1,4 @@
-package Simulation;
+package Simulation; // czy to na pewno jest element symulacji?
 
 import Map.WorldMap;
 import Utils.Config;

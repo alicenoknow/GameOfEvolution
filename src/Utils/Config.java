@@ -1,4 +1,4 @@
-package Utils;
+package Utils;  // pakiety raczej małymi literami
 
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class Config {
     private final Logger log = Logger.getLogger(this.getClass().getName());
 
-    private static int width;
+    private static int width;   // może public final?
     private static int height;
     private static double jungleRatio;
     private static int moveEnergy;

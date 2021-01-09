@@ -117,7 +117,7 @@ public class ComplexStatistics extends Statistics {
         grassCounter--;
     }
 
-    private void increaseDeaths() {
+    private void increaseDeaths() { // czy ta metoda coś wnosi?
         deathsCounter++;
     }
 

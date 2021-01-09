@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Herd extends AbstractWorldMapElement {
 
-    private final LinkedList<Animal> members = new LinkedList<>();
+    private final LinkedList<Animal> members = new LinkedList<>();  // może SortedSet?
     private Grass foodSupplies;
 
     public Herd(Animal animal, Vector2d pos) {
@@ -36,7 +36,7 @@ public class Herd extends AbstractWorldMapElement {
             this.members.sort(Animal::compareEnergy);
 
             if (members.get(0).canProcreate(members.get(1)))
-                return members.subList(0, 2);
+                return members.subList(0, 2);   // a jeśli więcej zwierząt ma równą energię?
         }
         return null;
     }

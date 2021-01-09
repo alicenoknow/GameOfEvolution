@@ -28,7 +28,7 @@ public class Statistics {
     }
 
     // Add gen to statistics
-    protected void addGen(Genotype gen) {
+    protected void addGen(Genotype gen) {   // gene
         int count = 1;
         if (gens.containsKey(gen))
             count += gens.get(gen);

@@ -11,7 +11,7 @@ public enum TrackStatus {
     public Color trackColor;
 
     static {
-        MAIN.trackColor = Color.rgb(255, 130, 255);
+        MAIN.trackColor = Color.rgb(255, 130, 255); // nie lepiej te kolory wyrzucić gdzieś do GUI?
         CHILD.trackColor = Color.rgb(225, 40, 225);
         GRANDCHILD.trackColor = Color.rgb(153, 50, 204);
     }

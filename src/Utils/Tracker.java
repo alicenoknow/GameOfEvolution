@@ -9,7 +9,7 @@ public class Tracker {
     private int deathDay = 0;
     private final int trackDay;
     private ArrayList<Animal> trackedChildren = new ArrayList<>();
-    private ArrayList<Animal> trackedGrandChildren = new ArrayList<>();
+    private ArrayList<Animal> trackedGrandChildren = new ArrayList<>(); // a dalsze pokolenia?
 
     public Tracker(Animal animal, int trackDay) {
         this.trackedAnimal = animal;
@@ -51,7 +51,7 @@ public class Tracker {
     // Final tracking statistics
     @Override
     public String toString() {
-        String toString = String.format("On day %d:\n", trackDay);
+        String toString = String.format("On day %d:\n", trackDay);  // StringBuilder
         if (deathDay > 0)
             toString += String.format("Chosen animal died on %d day.\n", deathDay);
         else toString += "Chosen animal is alive.\n";

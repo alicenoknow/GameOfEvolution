@@ -7,7 +7,7 @@ import java.util.Random;
 public class Genotype {
 
     private final ArrayList<Integer> gens = new ArrayList<>();
-    private final Random generator = new Random();
+    private final Random generator = new Random();  // proponuję static
 
     // Adam or Eve genotype | random
     public Genotype() {
